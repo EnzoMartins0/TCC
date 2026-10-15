@@ -1,0 +1,346 @@
+{
+  "desktop": {
+    "passed": true,
+    "results": [
+      {
+        "name": "catálogo e busca sem acentos/sabores",
+        "passed": true
+      },
+      {
+        "name": "modal: Escape, foco, clique fora e seleção explícita",
+        "passed": true
+      },
+      {
+        "name": "retirada disponível abaixo do mínimo; troca para entrega é revalidada",
+        "passed": true
+      },
+      {
+        "name": "adicionais, remoções e observações como texto; quantidade e cupom sincronizados",
+        "passed": true
+      },
+      {
+        "name": "checkout completo valida troco e prepara rascunho identificado",
+        "passed": true
+      },
+      {
+        "name": "WhatsApp mantém texto exato e destino correto sem envio real",
+        "passed": true
+      },
+      {
+        "name": "editar preserva dados; novo pedido permite cancelar ou limpar tudo",
+        "passed": true
+      },
+      {
+        "name": "sem erros JavaScript e sem rolagem horizontal",
+        "passed": true
+      }
+    ],
+    "realMessageSent": false
+  },
+  "mobile": {
+    "passed": true,
+    "results": [
+      {
+        "name": "catálogo e busca sem acentos/sabores",
+        "passed": true
+      },
+      {
+        "name": "modal: Escape, foco, clique fora e seleção explícita",
+        "passed": true
+      },
+      {
+        "name": "retirada disponível abaixo do mínimo; troca para entrega é revalidada",
+        "passed": true
+      },
+      {
+        "name": "adicionais, remoções e observações como texto; quantidade e cupom sincronizados",
+        "passed": true
+      },
+      {
+        "name": "checkout completo valida troco e prepara rascunho identificado",
+        "passed": true
+      },
+      {
+        "name": "WhatsApp mantém texto exato e destino correto sem envio real",
+        "passed": true
+      },
+      {
+        "name": "editar preserva dados; novo pedido permite cancelar ou limpar tudo",
+        "passed": true
+      },
+      {
+        "name": "sem erros JavaScript e sem rolagem horizontal",
+        "passed": true
+      }
+    ],
+    "realMessageSent": false
+  },
+  "reload": {
+    "items": 1,
+    "unit": 34.9,
+    "observation": "",
+    "name": "",
+    "address": "",
+    "deliveryType": "retirada",
+    "paymentMethod": "Dinheiro",
+    "pickupChecked": "true",
+    "barCount": "1"
+  },
+  "additionalWidths": [
+  {
+    "width": 390,
+    "states": [
+      {
+        "screen": "menu",
+        "overflow": false
+      },
+      {
+        "screen": "cart",
+        "overflow": false
+      },
+      {
+        "screen": "checkout",
+        "overflow": false
+      },
+      {
+        "screen": "confirm",
+        "overflow": false
+      },
+      {
+        "screen": "modal",
+        "overflow": false
+      }
+    ],
+    "columns": "none"
+  },
+  {
+    "width": 768,
+    "states": [
+      {
+        "screen": "menu",
+        "overflow": false
+      },
+      {
+        "screen": "cart",
+        "overflow": false
+      },
+      {
+        "screen": "checkout",
+        "overflow": false
+      },
+      {
+        "screen": "confirm",
+        "overflow": false
+      },
+      {
+        "screen": "modal",
+        "overflow": false
+      }
+    ],
+    "columns": "316.5px 316.5px"
+  }
+],
+  "reducedMotion": {"emulated": true, "sheetTransitionDuration": "0s"},
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mobile": {
+      "width": 320,
+      "height": 740
+    }
+  },
+  "finalFlowCount": 36,
+  "finalFlows": [
+  {
+    "passed": true,
+    "results": [
+      {
+        "name": "catálogo e busca sem acentos/sabores",
+        "passed": true
+      },
+      {
+        "name": "modal: Escape, foco, clique fora e seleção explícita",
+        "passed": true
+      },
+      {
+        "name": "retirada disponível abaixo do mínimo; troca para entrega é revalidada",
+        "passed": true
+      },
+      {
+        "name": "adicionais, remoções e observações como texto; quantidade e cupom sincronizados",
+        "passed": true
+      },
+      {
+        "name": "checkout completo valida troco e prepara rascunho identificado",
+        "passed": true
+      },
+      {
+        "name": "WhatsApp mantém texto exato e destino correto sem envio real",
+        "passed": true
+      },
+      {
+        "name": "editar preserva dados; novo pedido permite cancelar ou limpar tudo",
+        "passed": true
+      },
+      {
+        "name": "textos longos permitidos não alargam carrinho, revisão ou resumo",
+        "passed": true
+      },
+      {
+        "name": "sem erros JavaScript e sem rolagem horizontal",
+        "passed": true
+      }
+    ],
+    "realMessageSent": false,
+    "viewport": {
+      "width": 320,
+      "height": 740
+    }
+  },
+  {
+    "passed": true,
+    "results": [
+      {
+        "name": "catálogo e busca sem acentos/sabores",
+        "passed": true
+      },
+      {
+        "name": "modal: Escape, foco, clique fora e seleção explícita",
+        "passed": true
+      },
+      {
+        "name": "retirada disponível abaixo do mínimo; troca para entrega é revalidada",
+        "passed": true
+      },
+      {
+        "name": "adicionais, remoções e observações como texto; quantidade e cupom sincronizados",
+        "passed": true
+      },
+      {
+        "name": "checkout completo valida troco e prepara rascunho identificado",
+        "passed": true
+      },
+      {
+        "name": "WhatsApp mantém texto exato e destino correto sem envio real",
+        "passed": true
+      },
+      {
+        "name": "editar preserva dados; novo pedido permite cancelar ou limpar tudo",
+        "passed": true
+      },
+      {
+        "name": "textos longos permitidos não alargam carrinho, revisão ou resumo",
+        "passed": true
+      },
+      {
+        "name": "sem erros JavaScript e sem rolagem horizontal",
+        "passed": true
+      }
+    ],
+    "realMessageSent": false,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  {
+    "passed": true,
+    "results": [
+      {
+        "name": "catálogo e busca sem acentos/sabores",
+        "passed": true
+      },
+      {
+        "name": "modal: Escape, foco, clique fora e seleção explícita",
+        "passed": true
+      },
+      {
+        "name": "retirada disponível abaixo do mínimo; troca para entrega é revalidada",
+        "passed": true
+      },
+      {
+        "name": "adicionais, remoções e observações como texto; quantidade e cupom sincronizados",
+        "passed": true
+      },
+      {
+        "name": "checkout completo valida troco e prepara rascunho identificado",
+        "passed": true
+      },
+      {
+        "name": "WhatsApp mantém texto exato e destino correto sem envio real",
+        "passed": true
+      },
+      {
+        "name": "editar preserva dados; novo pedido permite cancelar ou limpar tudo",
+        "passed": true
+      },
+      {
+        "name": "textos longos permitidos não alargam carrinho, revisão ou resumo",
+        "passed": true
+      },
+      {
+        "name": "sem erros JavaScript e sem rolagem horizontal",
+        "passed": true
+      }
+    ],
+    "realMessageSent": false,
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    }
+  },
+  {
+    "passed": true,
+    "results": [
+      {
+        "name": "catálogo e busca sem acentos/sabores",
+        "passed": true
+      },
+      {
+        "name": "modal: Escape, foco, clique fora e seleção explícita",
+        "passed": true
+      },
+      {
+        "name": "retirada disponível abaixo do mínimo; troca para entrega é revalidada",
+        "passed": true
+      },
+      {
+        "name": "adicionais, remoções e observações como texto; quantidade e cupom sincronizados",
+        "passed": true
+      },
+      {
+        "name": "checkout completo valida troco e prepara rascunho identificado",
+        "passed": true
+      },
+      {
+        "name": "WhatsApp mantém texto exato e destino correto sem envio real",
+        "passed": true
+      },
+      {
+        "name": "editar preserva dados; novo pedido permite cancelar ou limpar tudo",
+        "passed": true
+      },
+      {
+        "name": "textos longos permitidos não alargam carrinho, revisão ou resumo",
+        "passed": true
+      },
+      {
+        "name": "sem erros JavaScript e sem rolagem horizontal",
+        "passed": true
+      }
+    ],
+    "realMessageSent": false,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  }
+],
+  "notes": [
+    "Testes no navegador local, sem envio real de WhatsApp.",
+    "Viewport móvel emulado; não é um teste em telefone físico.",
+    "Não houve validação real de recebimento pela loja ou processamento de pagamento."
+  ]
+}

@@ -1,0 +1,507 @@
+{
+  "passed": true,
+  "checks": 52,
+  "runs": [
+    {
+      "passed": true,
+      "width": 320,
+      "results": [
+        {
+          "action": "início",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 0
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "lanches",
+          "active": "lanches",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1281
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 82,
+          "scrollY": 2137
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "bebidas",
+          "active": "bebidas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 195,
+          "scrollY": 2805
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "sobremesas",
+          "active": "sobremesas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 337,
+          "scrollY": 3412
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "bebidas",
+          "active": "bebidas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 337,
+          "scrollY": 2805
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 271,
+          "scrollY": 2137
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "lanches",
+          "active": "lanches",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 155,
+          "scrollY": 1281
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 8,
+          "scrollY": 642
+        },
+        {
+          "action": "fim da página",
+          "expected": "sobremesas",
+          "active": "sobremesas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 337,
+          "scrollY": 3559
+        },
+        {
+          "action": "retorno ao topo",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 8,
+          "scrollY": 0
+        },
+        {
+          "action": "clique na categoria",
+          "expected": "bebidas",
+          "active": "bebidas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 195,
+          "scrollY": 2797
+        },
+        {
+          "action": "rolagem manual após clique",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 195,
+          "scrollY": 2137
+        }
+      ],
+      "reducedMotion": false
+    },
+    {
+      "passed": true,
+      "width": 430,
+      "results": [
+        {
+          "action": "início",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 0
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "lanches",
+          "active": "lanches",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1092
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1908
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "bebidas",
+          "active": "bebidas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 85,
+          "scrollY": 2535
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "sobremesas",
+          "active": "sobremesas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 227,
+          "scrollY": 3033
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "bebidas",
+          "active": "bebidas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 227,
+          "scrollY": 2535
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 227,
+          "scrollY": 1908
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "lanches",
+          "active": "lanches",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 155,
+          "scrollY": 1092
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 8,
+          "scrollY": 573
+        },
+        {
+          "action": "fim da página",
+          "expected": "sobremesas",
+          "active": "sobremesas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 227,
+          "scrollY": 3033
+        },
+        {
+          "action": "retorno ao topo",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 8,
+          "scrollY": 0
+        },
+        {
+          "action": "clique na categoria",
+          "expected": "bebidas",
+          "active": "bebidas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 85,
+          "scrollY": 2527
+        },
+        {
+          "action": "rolagem manual após clique",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 85,
+          "scrollY": 1908
+        }
+      ],
+      "reducedMotion": false
+    },
+    {
+      "passed": true,
+      "width": 1440,
+      "results": [
+        {
+          "action": "início",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 0
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "lanches",
+          "active": "lanches",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 835
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1326
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "sobremesas",
+          "active": "sobremesas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1641
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "sobremesas",
+          "active": "sobremesas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1641
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "sobremesas",
+          "active": "sobremesas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1641
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1326
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "lanches",
+          "active": "lanches",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 835
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 476
+        },
+        {
+          "action": "fim da página",
+          "expected": "sobremesas",
+          "active": "sobremesas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1641
+        },
+        {
+          "action": "retorno ao topo",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 0
+        },
+        {
+          "action": "clique na categoria",
+          "expected": "bebidas",
+          "active": "bebidas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1641
+        },
+        {
+          "action": "rolagem manual após clique",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1326
+        }
+      ],
+      "reducedMotion": false
+    },
+    {
+      "passed": true,
+      "width": 390,
+      "results": [
+        {
+          "action": "início",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 0
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "lanches",
+          "active": "lanches",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 0,
+          "scrollY": 1078
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 12,
+          "scrollY": 1894
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "bebidas",
+          "active": "bebidas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 125,
+          "scrollY": 2542
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "sobremesas",
+          "active": "sobremesas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 267,
+          "scrollY": 3129
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "bebidas",
+          "active": "bebidas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 267,
+          "scrollY": 2542
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 267,
+          "scrollY": 1894
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "lanches",
+          "active": "lanches",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 155,
+          "scrollY": 1078
+        },
+        {
+          "action": "rolagem vertical",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 8,
+          "scrollY": 559
+        },
+        {
+          "action": "fim da página",
+          "expected": "sobremesas",
+          "active": "sobremesas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 267,
+          "scrollY": 3136
+        },
+        {
+          "action": "retorno ao topo",
+          "expected": "promo",
+          "active": "promo",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 8,
+          "scrollY": 0
+        },
+        {
+          "action": "clique na categoria",
+          "expected": "bebidas",
+          "active": "bebidas",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 125,
+          "scrollY": 2534
+        },
+        {
+          "action": "rolagem manual após clique",
+          "expected": "porcoes",
+          "active": "porcoes",
+          "passed": true,
+          "fullyVisible": true,
+          "navScrollLeft": 125,
+          "scrollY": 1894
+        }
+      ],
+      "reducedMotion": true
+    }
+  ],
+  "notes": [
+    "Viewports móveis emulados, não um teste em telefone físico.",
+    "Testados descida, subida, fim da página, clique e rolagem manual após clique.",
+    "Um dos cenários verifica preferência de movimento reduzido."
+  ]
+}

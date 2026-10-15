@@ -1,0 +1,351 @@
+/* ============================================================
+   css/cart-checkout.css — Carrinho, checkout em 3 passos e confirmação
+   ============================================================ */
+
+/* ---------- Subheader genérico ---------- */
+.subheader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  z-index: 4;
+}
+
+.iconbtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.subheader h2 { font-size: 16px; margin: 0; font-weight: 700; }
+
+/* ---------- Ticket / Receipt (carrinho) ---------- */
+.ticket { margin: 16px; background: var(--paper); position: relative; }
+
+.torn {
+  height: 11px;
+  background-image:
+    linear-gradient(45deg,  transparent 50%, var(--paper) 50%),
+    linear-gradient(-45deg, transparent 50%, var(--paper) 50%);
+  background-size: 14px 14px;
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+.ticket-body {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-top: none;
+  padding: 6px 14px 14px;
+}
+
+.ticket-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.ticket-row:last-child { border-bottom: none; }
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 3px 6px;
+  flex-shrink: 0;
+}
+.stepper button {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ember-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stepper .qn {
+  font-family: 'JetBrains Mono';
+  font-size: 12px;
+  font-weight: 700;
+  min-width: 14px;
+  text-align: center;
+}
+
+.row-info  { flex: 1; min-width: 0; }
+.row-name  { font-size: 13.5px; font-weight: 600; }
+.row-mods  { font-size: 11px; color: var(--ink-soft); margin-top: 2px; line-height: 1.4; overflow-wrap: anywhere; }
+.row-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.row-price { font-family: 'JetBrains Mono'; font-weight: 700; font-size: 13px; }
+.row-trash { border: none; background: none; color: var(--ink-soft); font-size: 13px; cursor: pointer; }
+
+/* ---------- Cupom ---------- */
+.coupon-row { display: flex; gap: 8px; margin-top: 14px; }
+
+.coupon-row input {
+  flex: 1;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-family: 'JetBrains Mono';
+  font-size: 12px;
+  background: var(--paper);
+  
+  text-transform: uppercase;
+}
+
+.coupon-row button {
+  border: none;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.coupon-msg { font-size: 11px; margin-top: 6px; font-weight: 600; }
+.coupon-msg.ok { color: var(--leaf); }
+
+/* ---------- Totais ---------- */
+.totals { margin-top: 14px; border-top: 2px solid var(--ink); padding-top: 10px; }
+
+.trow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  margin-bottom: 6px;
+  font-family: 'JetBrains Mono';
+}
+.trow.grand  { font-size: 16px; font-weight: 700; margin-top: 8px; }
+.trow .lbl   { color: var(--ink-soft); font-family: 'Inter', Arial, sans-serif; font-size: 12.5px; }
+.trow.grand .lbl { color: var(--ink); font-weight: 700; }
+
+/* ---------- Aviso pedido mínimo ---------- */
+.min-warning {
+  margin: 0 16px 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fbe6da;
+  color: var(--ember-dark);
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px dashed var(--ember);
+}
+
+/* ---------- Botões CTA ---------- */
+.cta {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 6px 16px 16px;
+  background: var(--ember);
+  color: #fff;
+  border: none;
+  border-radius: 13px;
+  padding: 14px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 0 var(--ember-dark);
+  font-family: 'Inter', Arial, sans-serif;
+}
+.cta:disabled { background: #cbb89a; box-shadow: 0 5px 0 #a89776; cursor: not-allowed; }
+.cta.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  box-shadow: none;
+}
+
+/* ---------- Carrinho vazio ---------- */
+.empty-cart { padding: 60px 30px; text-align: center; color: var(--ink-soft); font-size: 13px; }
+.empty-cart .big { font-size: 40px; margin-bottom: 10px; }
+
+/* ---------- Checkout — stepper de passos ---------- */
+.stepper-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 18px 16px 6px;
+}
+
+.stamp {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  color: var(--ink-soft);
+  font-family: 'JetBrains Mono';
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stamp.done { background: var(--leaf); border-color: var(--leaf); color: #fff; }
+.stamp.now  { background: var(--ember); border-color: var(--ember); color: #fff; transform: rotate(-6deg); }
+
+.stepper-nav .dash { width: 18px; border-top: 2px dashed var(--line); }
+
+/* ---------- Checkout — painel de conteúdo ---------- */
+.panel    { padding: 16px; }
+.panel h3 { font-size: 14.5px; margin: 0 0 12px; }
+
+.segmented {
+  display: flex;
+  border: 1.5px solid var(--ink);
+  border-radius: 11px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.segmented button {
+  flex: 1;
+  text-align: center;
+  padding: 11px 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+.segmented button.active { background: var(--ink); color: var(--paper); }
+
+/* ---------- Campos de formulário ---------- */
+.field           { margin-bottom: 12px; }
+.field label     { display: block; font-size: 11.5px; color: var(--ink-soft); margin-bottom: 5px; font-weight: 600; }
+.field input,
+.field textarea  { width: 100%; border: 1px solid var(--line); border-radius: 9px; padding: 10px 11px; font-family: 'Inter', Arial, sans-serif; font-size: 13.5px;  background: var(--cream); color: var(--ink); }
+.field textarea  { resize: none; min-height: 60px; font-family: 'Inter', Arial, sans-serif; }
+.field-row       { display: flex; gap: 10px; }
+.field-row .field { flex: 1; }
+
+/* ---------- Opções de pagamento ---------- */
+.pay-option {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.pay-option.active  { border-color: var(--ember); background: #fdf0e7; }
+.pay-option .pemoji { font-size: 19px; }
+.pay-option .pname  { font-size: 13.5px; font-weight: 600; flex: 1; }
+.pay-radio          { width: 17px; height: 17px; border-radius: 50%; border: 2px solid var(--ink-soft); flex-shrink: 0; }
+.pay-option.active .pay-radio { border-color: var(--ember); background: radial-gradient(circle, var(--ember) 0 45%, transparent 46%); }
+
+/* ---------- Revisão (step 3) ---------- */
+.review-block {
+  overflow-wrap: anywhere;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 12.5px;
+}
+.review-block .rb-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-bottom: 6px;
+}
+.review-item { display: flex; justify-content: space-between; font-family: 'JetBrains Mono'; font-size: 12px; margin-bottom: 4px; }
+
+/* ---------- Ações do step (voltar / continuar) ---------- */
+.step-actions      { display: flex; gap: 10px; padding: 4px 16px 8px; }
+.step-actions .cta { margin: 6px 0; }
+.step-actions .back-link {
+  flex: 0 0 90px;
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1.5px solid var(--line);
+  border-radius: 13px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ---------- Confirmação ---------- */
+.confirm-wrap { padding: 30px 16px 10px; text-align: center; }
+
+.stamp-big {
+  display: inline-block;
+  border: 3px solid var(--leaf);
+  color: var(--leaf);
+  font-family: 'Fraunces';
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transform: rotate(-7deg);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.confirm-wrap h2 { font-size: 20px; margin: 0 0 6px; }
+.confirm-wrap p  { font-size: 13px; color: var(--ink-soft); margin: 0 0 4px; }
+.order-no { font-family: 'JetBrains Mono'; font-weight: 700; font-size: 13px; color: var(--ink); margin-top: 8px; }
+
+
+/* Controles nativos e resumo legível em qualquer largura. */
+.segmented button { border:0; border-radius:0; background:transparent; }
+.segmented button[aria-checked="true"] { background:var(--ink); color:var(--paper); }
+.pay-option { width:100%; text-align:left; background:transparent; color:var(--ink); }
+.pay-option[aria-checked="true"] { border-color:var(--ember); background:#fdf0e7; }
+.field { min-width:0; }
+.field input, .field textarea { font-size:16px; min-height:48px; }
+.field textarea { resize:vertical; min-height:96px; }
+.field label { font-size:13px; }
+.field-row { flex-wrap:wrap; }
+.field-row .field { min-width:90px; }
+.ticket-row { flex-wrap:wrap; }
+.row-right { margin-left:auto; }
+.row-trash { min-width:44px; min-height:44px; }
+.coupon-row input { min-width:0; }
+.trow, .review-item { gap:12px; overflow-wrap:anywhere; }
+.cta { min-height:48px; box-shadow:none; }
+.cta:hover:not(:disabled) { background:var(--ember-dark); }
+.cta.ghost:hover { background:var(--cream); }
+.delivery-selector { margin:16px; padding:16px; border:1px solid var(--line); border-radius:12px; }
+.delivery-selector [role="radiogroup"] { display:flex; flex-wrap:wrap; gap:8px; }
+.delivery-selector button { padding:10px 16px; border:1px solid var(--line); border-radius:8px; background:var(--paper); }
+.delivery-selector button[aria-checked="true"] { background:var(--ink); color:var(--paper); }
+.cart-actions { padding-block:8px; }
+.remove-coupon, .cart-empty-action { padding:10px 14px; min-height:44px; border:1px solid var(--line); border-radius:8px; background:var(--paper); color:var(--ember-dark); }
+.confirm-summary { margin:16px; padding:20px; border:1px solid var(--line); border-radius:12px; background:#fffdf8; overflow-wrap:anywhere; white-space:pre-wrap; }
+.confirm-summary:empty { display:none; }
+.confirm-actions { padding:8px 16px; display:grid; gap:12px; }
+.confirm-actions .cta { width:100%; margin:0; }
+#btnWhatsApp { background:var(--leaf); }
+.order-item { padding:12px 0; border-bottom:1px solid var(--line); }
+.order-item-meta { font-size:13px; color:var(--ink-soft); overflow-wrap:anywhere; }
+.summary-row { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 16px; margin:8px 0; }
+.confirm-wrap { padding:36px 20px 16px; }
+.confirm-wrap h2 { font-size:clamp(26px,4vw,34px); }
+.confirm-wrap p { font-size:15px; max-width:54ch; margin-inline:auto; }
+.stamp-big { transform:none; border-width:1px; color:var(--ink-soft); border-color:var(--line); font-size:12px; }
+@media (max-width:400px) { .ticket-body { padding-inline:10px; } .ticket-row { gap:8px; } .stepper { gap:2px; padding:2px; } .step-actions { flex-wrap:wrap; } .step-actions .cta { flex:1; width:auto; } }

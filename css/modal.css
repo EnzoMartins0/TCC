@@ -1,0 +1,174 @@
+/* ============================================================
+   css/modal.css — Modal de detalhes do produto e toast de notificação
+   ============================================================ */
+
+/* ---------- Utilitário global ---------- */
+.hidden { display: none !important; }
+
+/* ---------- Overlay ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20,14,10,.55);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease;
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ---------- Sheet (bottom sheet) ---------- */
+.sheet {
+  background: var(--paper);
+  width: 100%;
+  max-width: 640px;
+  border-radius: 24px 24px 0 0;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform: translateY(100%);
+  transition: transform .32s cubic-bezier(.32,1,.23,1);
+  /* sem overflow aqui — fica no .sheet-body */
+}
+
+.sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--line);
+  border-radius: 3px;
+  margin: 12px auto 8px;
+  flex-shrink: 0;
+  cursor: grab;
+  /* área de toque maior que o visual */
+  padding: 8px 24px;
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sheet-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 14px;
+}
+
+.sheet-top {
+  padding: 4px 18px 14px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.sheet-pic {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 2px dashed var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  flex-shrink: 0;
+}
+
+.sheet-top h3 { font-size: 16px; margin: 0 0 4px; }
+.sheet-top p  { font-size: 12px; color: var(--ink-soft); margin: 0; line-height: 1.4; }
+
+.sheet-price {
+  font-family: 'JetBrains Mono';
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ember-dark);
+  padding: 0 18px 12px;
+}
+
+/* ---------- Blocos de opção ---------- */
+.opt-block { padding: 6px 18px 14px; border-top: 1px dashed var(--line); }
+.opt-block .ob-title { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+.opt-block .ob-sub   { font-size: 11px; color: var(--ink-soft); margin-bottom: 10px; }
+
+.opt-line { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
+
+.opt-line .ck {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--ink-soft);
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+.opt-line.checked .ck { background: var(--ember); border-color: var(--ember); position: relative; }
+.opt-line.checked .ck::after {
+  content: '✓';
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.opt-line .ck.round { border-radius: 50%; }
+.opt-line .ol-name  { flex: 1; font-size: 13px; }
+.opt-line .ol-price { font-family: 'JetBrains Mono'; font-size: 12px; color: var(--ink-soft); }
+
+/* ---------- Footer do sheet ---------- */
+.sheet-footer {
+  position: sticky;
+  bottom: 0;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  padding: 12px 18px 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sheet-footer .stepper { transform: scale(1.05); }
+.sheet-footer .cta     { flex: 1; margin: 0; }
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 30px;
+  z-index: 80;
+  box-shadow: 0 8px 20px rgba(0,0,0,.3);
+}
+.toast.hidden { display: none; }
+
+/* O diálogo fechado não entra na navegação por teclado. */
+.modal-overlay:not(.open) { visibility: hidden; }
+.modal-close { position:absolute; right:12px; top:10px; z-index:2; width:44px; height:44px; border:1px solid var(--line); border-radius:50%; background:var(--paper); font-size:26px; }
+.sheet { max-height:calc(100dvh - 16px); }
+.sheet-body { overscroll-behavior:contain; }
+.sheet-top { padding-right:64px; }
+.sheet-top h3 { font-family:'Fraunces',Georgia,serif; font-size:23px; }
+.sheet-top p { font-size:14px; }
+.opt-block .ob-title { display:block; font-size:14px; }
+.opt-block .ob-sub { font-size:13px; }
+.opt-line { min-height:44px; width:100%; text-align:left; color:var(--ink); background:transparent; border:0; border-bottom:1px solid var(--line); }
+.opt-line[aria-checked="true"] { background:var(--cream); }
+.opt-line .ol-name { min-width:0; }
+.opt-line .ol-price { flex-shrink:0; }
+#mObs { width:100%; border:1px solid var(--line); border-radius:9px; padding:12px; font-size:16px; background:var(--cream); min-height:88px; resize:vertical; }
+.sheet-footer { padding-bottom:calc(12px + env(safe-area-inset-bottom)); flex-wrap:wrap; }
+.sheet-footer .stepper { transform:none; }
+.sheet-footer .cta { min-width:140px; width:auto; }
+.toast { max-width:calc(100% - 32px); width:max-content; border-radius:10px; bottom:100px; overflow-wrap:anywhere; }
+@media (min-width:768px) { .modal-overlay { align-items:center; padding:24px; } .sheet { border-radius:20px; max-height:90dvh; } }
+@media (max-width:400px) { .sheet-footer { gap:10px; padding-inline:16px; } .sheet-footer .cta { flex-basis:100%; } .sheet-top { gap:10px; } .sheet-pic { width:52px; height:52px; } }

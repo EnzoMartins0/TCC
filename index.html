@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasa Lanches — Cardápio Online</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/cart-checkout.css">
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+<a class="skip-link" href="#sections">Pular para o cardápio</a>
+<div class="app-shell">
+
+  <div class="app" id="app">
+
+    <!-- ================= TELA: MENU ================= -->
+    <div class="screen active" id="screen-menu">
+
+      <div class="hero">
+        <div class="hero-top">
+          <div class="logo-badge" aria-hidden="true">🔥</div>
+          <div>
+            <h1 class="hero-name display" id="storeName">Brasa Lanches</h1>
+            <div class="hero-cat" id="storeCategory"></div>
+          </div>
+          <div class="status-pill" id="storeStatus"></div>
+        </div>
+        <div class="hero-meta">
+          <span id="storeRating"></span>
+          <span id="storeDeliveryTime"></span>
+          <span id="storeAddress"></span>
+        </div>
+        <div class="hero-strip" id="heroStrip"></div>
+      </div>
+
+      <div class="desktop-intro"><h2>Nosso cardápio</h2><p>Escolha, personalize e revise seu pedido.</p></div>
+      <div class="search-wrap">
+        <div class="search-box">
+          <span aria-hidden="true">🔍</span>
+          <label for="searchInput" class="sr-only">Buscar no cardápio</label>
+          <input id="searchInput" type="search" maxlength="120" oninput="onSearch()">
+        </div>
+      </div>
+
+      <p id="searchResultCount" class="search-result-count" role="status" aria-live="polite"></p>
+      <nav class="catnav" id="catnav" aria-label="Categorias do cardápio"></nav>
+
+      <div class="ribbon" id="ribbon"></div>
+
+      <main id="sections" tabindex="-1" aria-label="Produtos do cardápio"></main>
+      <div class="empty-search hidden" id="emptySearch"></div>
+
+      <footer class="store-footer"><p>Projeto acadêmico · dados demonstrativos. Valores, cupons e condições são exemplos, não uma oferta comercial.</p><p>Seu carrinho fica salvo neste navegador: apenas produtos, opções, quantidades e preferências. Nome, telefone, endereço e observações não são persistidos.</p></footer>
+    </div>
+
+    <!-- ================= TELA: CARRINHO ================= -->
+    <div class="screen" id="screen-cart">
+      <div class="subheader">
+        <button type="button" class="iconbtn" onclick="showScreen('menu')" aria-label="Voltar ao cardápio">←</button>
+        <h2 id="cartTitle"></h2>
+      </div>
+      <div id="cartContent"></div>
+    </div>
+
+    <!-- ================= TELA: CHECKOUT ================= -->
+    <div class="screen" id="screen-checkout">
+      <div class="subheader">
+        <button type="button" class="iconbtn" onclick="backFromCheckout()" aria-label="Voltar ao carrinho">←</button>
+        <h2 id="checkoutTitle"></h2>
+      </div>
+
+      <div class="stepper-nav" role="group" aria-label="Etapas: entrega, pagamento e revisão">
+        <div class="stamp" id="stamp1">1</div>
+        <div class="dash"></div>
+        <div class="stamp" id="stamp2">2</div>
+        <div class="dash"></div>
+        <div class="stamp" id="stamp3">3</div>
+      </div>
+
+      <div class="inline-error" id="checkoutError" role="alert" tabindex="-1"></div>
+      <p class="checkout-hint">Os valores de entrega são exemplos locais. Confirme taxa e prazo com a loja. Nenhum pagamento é feito neste site.</p>
+      <!-- Passo 1: Entrega -->
+      <div class="panel" id="step1">
+        <h3 id="checkoutDeliveryTitle"></h3>
+        <div class="field"><label for="fNome">Seu nome (obrigatório)</label><input id="fNome" type="text" autocomplete="name" maxlength="80" required></div>
+        <div class="field"><label for="fTelefone">Telefone (opcional)</label><input id="fTelefone" type="tel" inputmode="tel" autocomplete="tel" maxlength="25"></div>
+        <div class="segmented" role="radiogroup" aria-label="Como receber o pedido">
+          <button type="button" role="radio" aria-checked="true" id="segEntrega"  class="active" onclick="setDeliveryType('entrega')" data-label="delivOptionDeliv"></button>
+          <button type="button" role="radio" aria-checked="false" id="segRetirada"              onclick="setDeliveryType('retirada')" data-label="delivOptionPickup"></button>
+        </div>
+
+        <div id="addressFields">
+          <div class="field-row">
+            <div class="field" style="flex:2;">
+              <label id="labelRua" for="fRua"></label>
+              <input id="fRua" maxlength="120" inputmode="text" autocomplete="address-line1" placeholder="Rua das Brasas">
+            </div>
+            <div class="field" style="flex:1;">
+              <label id="labelNumero" for="fNumero"></label>
+              <input id="fNumero" maxlength="20" inputmode="text" autocomplete="off" placeholder="220">
+            </div>
+          </div>
+          <div class="field">
+            <label id="labelBairro" for="fBairro"></label>
+            <input id="fBairro" maxlength="80" inputmode="text" autocomplete="address-level3" placeholder="Centro">
+          </div>
+          <div class="field">
+            <label id="labelComplemento" for="fComplemento"></label>
+            <input id="fComplemento" maxlength="120" inputmode="text" autocomplete="address-line2" placeholder="Apto, bloco...">
+          </div>
+          <div class="field">
+            <label id="labelReferencia" for="fReferencia"></label>
+            <input id="fReferencia" maxlength="160" inputmode="text" autocomplete="off" placeholder="Perto do mercado...">
+          </div>
+        </div>
+
+        <div id="pickupNote" class="hero-strip" style="background:var(--cream);border-color:var(--line);color:var(--ink-soft);display:none;"></div>
+      </div>
+
+      <!-- Passo 2: Pagamento -->
+      <div class="panel" id="step2" style="display:none;">
+        <h3 id="checkoutPayTitle"></h3>
+        <div role="radiogroup" aria-label="Forma de pagamento combinada com a loja">
+        <button type="button" class="pay-option active" role="radio" aria-checked="true" data-pay="Pix"              onclick="setPayment('Pix')">
+          <span class="pemoji">💸</span><span class="pname">Pix</span><span class="pay-radio"></span>
+        </button>
+        <button type="button" class="pay-option" role="radio" aria-checked="false" data-pay="Cartão de Crédito"       onclick="setPayment('Cartão de Crédito')">
+          <span class="pemoji">💳</span><span class="pname">Cartão de Crédito</span><span class="pay-radio"></span>
+        </button>
+        <button type="button" class="pay-option" role="radio" aria-checked="false" data-pay="Cartão de Débito"        onclick="setPayment('Cartão de Débito')">
+          <span class="pemoji">💳</span><span class="pname">Cartão de Débito</span><span class="pay-radio"></span>
+        </button>
+        <button type="button" class="pay-option" role="radio" aria-checked="false" data-pay="Dinheiro"                onclick="setPayment('Dinheiro')">
+          <span class="pemoji">💵</span><span class="pname">Dinheiro</span><span class="pay-radio"></span>
+        </button>
+        </div>
+        <div id="trocoField" class="field" style="display:none;">
+          <label id="labelTroco" for="fTroco"></label>
+          <input id="fTroco" maxlength="20" inputmode="decimal" autocomplete="off" placeholder="Ex: 50,00 (deixe vazio se não precisar)">
+        </div>
+      </div>
+
+      <!-- Passo 3: Revisão -->
+      <div class="panel" id="step3" style="display:none;">
+        <h3 id="checkoutReviewTitle"></h3>
+        <div class="review-block">
+          <div class="rb-title" id="reviewLabelItems"></div>
+          <div id="reviewItems"></div>
+        </div>
+        <div class="review-block">
+          <div class="rb-title" id="reviewLabelDelivery"></div>
+          <div id="reviewDelivery" style="font-size:12.5px;"></div>
+        </div>
+        <div class="review-block">
+          <div class="rb-title" id="reviewLabelPayment"></div>
+          <div id="reviewPayment" style="font-size:12.5px;"></div>
+        </div>
+        <div class="field">
+          <label id="labelObsGeral" for="fObsGeral"></label>
+          <textarea id="fObsGeral" maxlength="500" inputmode="text" autocomplete="off" placeholder="Ex: tocar o interfone, deixar na portaria..."></textarea>
+        </div>
+        <div class="totals" id="reviewTotals"></div>
+      </div>
+
+      <div class="step-actions">
+        <button type="button" class="back-link" id="btnBack" onclick="prevStep()" style="display:none;" data-label="btnBack"></button>
+        <button type="button" class="cta"       id="btnNext" onclick="nextStep()"></button>
+      </div>
+    </div>
+
+    <!-- ================= TELA: CONFIRMAÇÃO ================= -->
+    <div class="screen" id="screen-confirm">
+      <div class="confirm-wrap">
+        <div class="stamp-big" id="confirmStamp"></div>
+        <h2 class="display" id="confirmTitle">Pedido pronto para enviar</h2>
+        <p id="confirmSubtitle">Confira seu pedido antes de abrir o WhatsApp.</p>
+        <div class="order-no" id="orderNo"></div>
+      </div>
+
+      <div class="confirm-summary" id="confirmSummary" aria-label="Resumo do pedido"></div>
+      <p class="checkout-hint">Abrir o WhatsApp não confirma envio ou recebimento pela loja. Revise a mensagem e envie no aplicativo; aguarde a resposta da loja para combinar taxa e prazo.</p>
+
+      <div class="confirm-actions">
+        <button type="button" class="cta" id="btnWhatsApp" onclick="sendWhatsApp()"></button>
+        <button type="button" class="cta ghost" id="btnCopyOrder" onclick="copyOrderMessage()">Copiar pedido</button>
+        <button type="button" class="cta ghost" id="btnEditOrder" onclick="editOrder()">Editar pedido</button>
+        <button type="button" class="cta ghost" id="btnNewOrder" onclick="newOrder()"></button>
+      </div>
+    </div>
+
+    <!-- Barra flutuante do carrinho -->
+    <button type="button" class="cartbar hidden" id="cartbar" onclick="openCart()">
+      <span class="badge" id="cbCount">0</span>
+      <span class="label" id="cartBarLabel"></span>
+      <span class="total mono" id="cbTotal">R$ 0,00</span>
+      <span class="chev" aria-hidden="true">›</span>
+    </button>
+  </div><!-- /app -->
+</div><!-- /app-shell -->
+
+<!-- Modal de detalhes do produto -->
+<div class="modal-overlay" id="modalProduct" role="dialog" aria-modal="true" aria-labelledby="mName" tabindex="-1" aria-hidden="true">
+  <div class="sheet" id="sheet">
+    <button type="button" class="modal-close" id="modalClose" onclick="closeProduct()" aria-label="Fechar detalhes do produto">×</button>
+    <div class="sheet-handle" id="sheetHandle"></div>
+    <div class="sheet-body">
+      <div class="sheet-top">
+        <div class="sheet-pic" id="mPic"></div>
+        <div>
+          <h3 id="mName"></h3>
+          <p id="mDesc"></p>
+        </div>
+      </div>
+      <div class="sheet-price mono" id="mPrice"></div>
+      <div class="inline-error" id="modalError" role="alert" tabindex="-1"></div>
+
+      <div class="opt-block hidden" id="flavorBlock">
+        <div class="ob-title" id="modalFlavorTitle"></div>
+        <div class="ob-sub"   id="modalFlavorSub"></div>
+        <div id="flavorList"></div>
+      </div>
+
+      <div class="opt-block hidden" id="extrasBlock">
+        <div class="ob-title" id="modalExtrasTitle"></div>
+        <div class="ob-sub"   id="modalExtrasSub"></div>
+        <div id="extrasList"></div>
+      </div>
+
+      <div class="opt-block hidden" id="removeBlock">
+        <div class="ob-title" id="modalRemoveTitle"></div>
+        <div class="ob-sub"   id="modalRemoveSub"></div>
+        <div id="removeList"></div>
+      </div>
+
+      <div class="opt-block">
+        <label class="ob-title" id="modalObsTitle" for="mObs"></label>
+        <div class="ob-sub"   id="modalObsSub"></div>
+        <textarea id="mObs" maxlength="300" aria-describedby="modalObsSub"></textarea>
+      </div>
+
+      <div class="sheet-footer">
+        <div class="stepper">
+          <button type="button" aria-label="Diminuir quantidade" onclick="modalQtyDelta(-1)">−</button>
+          <span class="qn" id="mQty">1</span>
+          <button type="button" aria-label="Aumentar quantidade" onclick="modalQtyDelta(1)">+</button>
+        </div>
+        <button type="button" class="cta" id="mAddBtn" onclick="addToCart()"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Scripts (ordem importa) -->
+<script src="data/menu.js"></script>
+<script src="data/strings.js"></script>
+<script src="js/state.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/screens.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/checkout.js"></script>
+
+<!-- Inicialização — popula todos os textos estáticos via STRINGS e CONFIG -->
+<script>
+  // Hero
+  document.getElementById('storeName').textContent        = CONFIG.storeName;
+  document.getElementById('storeCategory').textContent    = CONFIG.storeCategory;
+  document.getElementById('storeStatus').textContent      = CONFIG.storeStatus;
+  document.getElementById('storeRating').textContent      = CONFIG.storeRating;
+  document.getElementById('storeDeliveryTime').textContent= CONFIG.storeDeliveryTime;
+  document.getElementById('storeAddress').textContent     = CONFIG.storeAddress;
+  document.getElementById('heroStrip').innerHTML          = STRINGS.heroStrip(CONFIG.freeDeliveryOver, CONFIG.minOrder);
+  document.getElementById('ribbon').innerHTML             = STRINGS.couponBanner(CONFIG.couponCode, Math.round(CONFIG.couponDiscount * 100));
+
+  // Busca
+  document.getElementById('searchInput').placeholder      = CONFIG.searchPlaceholder;
+  document.getElementById('emptySearch').innerHTML        = STRINGS.searchEmpty;
+
+  // Carrinho
+  document.getElementById('cartTitle').textContent        = CONFIG.cartTitle;
+  document.getElementById('cartBarLabel').textContent     = CONFIG.cartBarLabel;
+
+  // Checkout — títulos e labels
+  document.getElementById('checkoutTitle').textContent    = CONFIG.checkoutTitle;
+  document.getElementById('checkoutDeliveryTitle').textContent = CONFIG.checkoutDeliveryTitle;
+  document.getElementById('segEntrega').textContent       = CONFIG.delivOptionDeliv;
+  document.getElementById('segRetirada').textContent      = CONFIG.delivOptionPickup;
+  document.getElementById('pickupNote').textContent       = STRINGS.checkoutPickupNote;
+  document.getElementById('labelRua').textContent         = CONFIG.fieldStreet;
+  document.getElementById('labelNumero').textContent      = CONFIG.fieldNumber;
+  document.getElementById('labelBairro').textContent      = CONFIG.fieldHood;
+  document.getElementById('labelComplemento').textContent = CONFIG.fieldComplement;
+  document.getElementById('labelReferencia').textContent  = CONFIG.fieldReference;
+  document.getElementById('checkoutPayTitle').textContent = CONFIG.checkoutPayTitle;
+  document.getElementById('labelTroco').textContent       = CONFIG.fieldChangeFor;
+  document.getElementById('checkoutReviewTitle').textContent = CONFIG.checkoutReviewTitle;
+  document.getElementById('reviewLabelItems').textContent = CONFIG.reviewLabelItems;
+  document.getElementById('reviewLabelDelivery').textContent = CONFIG.reviewLabelDelivery;
+  document.getElementById('reviewLabelPayment').textContent  = CONFIG.reviewLabelPayment;
+  document.getElementById('labelObsGeral').textContent    = CONFIG.fieldObsGeral;
+  document.getElementById('btnBack').textContent          = STRINGS.checkoutBtnBack; // placeholder; JS troca dinamicamente
+  document.getElementById('btnNext').textContent          = STRINGS.checkoutBtnNext;
+
+  // Confirmação
+  document.getElementById('confirmStamp').textContent     = CONFIG.confirmStamp;
+  document.getElementById('confirmTitle').textContent     = CONFIG.confirmTitle;
+  document.getElementById('confirmSubtitle').textContent  = CONFIG.confirmSubtitle;
+  document.getElementById('btnWhatsApp').textContent      = CONFIG.btnWhatsApp;
+  document.getElementById('btnNewOrder').textContent      = CONFIG.btnNewOrder;
+
+  // Modal de produto
+  document.getElementById('modalFlavorTitle').textContent = CONFIG.modalFlavorTitle;
+  document.getElementById('modalFlavorSub').textContent   = CONFIG.modalFlavorSub;
+  document.getElementById('modalExtrasTitle').textContent = CONFIG.modalExtrasTitle;
+  document.getElementById('modalExtrasSub').textContent   = CONFIG.modalExtrasSub;
+  document.getElementById('modalRemoveTitle').textContent = CONFIG.modalRemoveTitle;
+  document.getElementById('modalRemoveSub').textContent   = CONFIG.modalRemoveSub;
+  document.getElementById('modalObsTitle').textContent    = CONFIG.modalObsTitle;
+  document.getElementById('modalObsSub').textContent      = CONFIG.modalObsSub;
+  document.getElementById('mObs').placeholder             = CONFIG.modalObsPlaceholder;
+
+</script>
+
+<script src="js/app.js"></script>
+</body>
+</html>
