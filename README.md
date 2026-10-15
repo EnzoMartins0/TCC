@@ -77,6 +77,14 @@ Os textos ficam em `data/strings.js` e os estilos em `css/`. Parte dos rótulos 
 6. Até 20 unidades por linha, até 50 linhas e até 300 caracteres de observação por item. Observações gerais: até 500 caracteres.
 7. Preços e opções restaurados vêm do catálogo atual, nunca de um preço salvo no navegador.
 
+## Ilustrações dos produtos
+
+Os 19 produtos têm ilustrações SVG próprias em `assets/products/`, usadas no cardápio, no detalhe e na sacola. São imagens ilustrativas, não fotos reais da lanchonete. Os campos `image` e `imageAlt` em `data/menu.js` definem o arquivo e a descrição. Inclua `assets/` ao copiar ou publicar o site. Veja `docs/ILUSTRACOES.md` para trocar as artes e executar os testes específicos.
+
+## Ícones da interface
+
+Logo, categorias, busca, entrega, pagamentos, cupom e controles usam SVGs locais e coerentes com a identidade Brasa. Os 27 modelos ficam em `js/icons.js`, sem fonte de ícones ou emojis. As ilustrações dos produtos permanecem em `assets/products/`. Veja `docs/ICONES-SVG.md` para organização e testes.
+
 ## Armazenamento e privacidade
 
 Chave local: `brasa-lanches:draft:v1`. O navegador salva somente IDs de produtos, quantidades, sabores, nomes de adicionais/remoções e preferências de recebimento, pagamento e cupom. O rascunho expira após sete dias sem atualização.
@@ -92,8 +100,10 @@ Não há analytics ou cookies de rastreamento implementados pelo projeto. As fon
 ```text
 index.html          Estrutura, rótulos e inicialização dos textos
 css/                Identidade visual, catálogo, checkout e modal
+assets/products/    Ilustrações SVG locais dos 19 produtos
 data/menu.js       Configurações e catálogo
 data/strings.js    Textos e modelos de mensagem
+js/icons.js         Modelos SVG locais da interface
 js/state.js         Estado e rascunho local validado
 js/utils.js         Formatação, identificação, escape de HTML e notificações
 js/screens.js       Navegação das telas

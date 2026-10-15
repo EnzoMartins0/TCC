@@ -27,7 +27,7 @@
 
       <div class="hero">
         <div class="hero-top">
-          <div class="logo-badge" aria-hidden="true">🔥</div>
+          <div class="logo-badge" aria-hidden="true"><span data-icon="flame" aria-hidden="true"></span></div>
           <div>
             <h1 class="hero-name display" id="storeName">Brasa Lanches</h1>
             <div class="hero-cat" id="storeCategory"></div>
@@ -35,17 +35,17 @@
           <div class="status-pill" id="storeStatus"></div>
         </div>
         <div class="hero-meta">
-          <span id="storeRating"></span>
-          <span id="storeDeliveryTime"></span>
-          <span id="storeAddress"></span>
+          <span id="storeRating" data-leading-icon="phone-chat"></span>
+          <span id="storeDeliveryTime" data-leading-icon="clock"></span>
+          <span id="storeAddress" data-leading-icon="map-pin"></span>
         </div>
-        <div class="hero-strip" id="heroStrip"></div>
+        <div class="hero-strip" id="heroStrip" data-leading-icon="delivery"></div>
       </div>
 
       <div class="desktop-intro"><h2>Nosso cardápio</h2><p>Escolha, personalize e revise seu pedido.</p></div>
       <div class="search-wrap">
         <div class="search-box">
-          <span aria-hidden="true">🔍</span>
+          <span data-icon="search" aria-hidden="true"></span>
           <label for="searchInput" class="sr-only">Buscar no cardápio</label>
           <input id="searchInput" type="search" maxlength="120" oninput="onSearch()">
         </div>
@@ -65,7 +65,7 @@
     <!-- ================= TELA: CARRINHO ================= -->
     <div class="screen" id="screen-cart">
       <div class="subheader">
-        <button type="button" class="iconbtn" onclick="showScreen('menu')" aria-label="Voltar ao cardápio">←</button>
+        <button type="button" class="iconbtn" onclick="showScreen('menu')" aria-label="Voltar ao cardápio"><span data-icon="arrow-left" aria-hidden="true"></span></button>
         <h2 id="cartTitle"></h2>
       </div>
       <div id="cartContent"></div>
@@ -74,7 +74,7 @@
     <!-- ================= TELA: CHECKOUT ================= -->
     <div class="screen" id="screen-checkout">
       <div class="subheader">
-        <button type="button" class="iconbtn" onclick="backFromCheckout()" aria-label="Voltar ao carrinho">←</button>
+        <button type="button" class="iconbtn" onclick="backFromCheckout()" aria-label="Voltar ao carrinho"><span data-icon="arrow-left" aria-hidden="true"></span></button>
         <h2 id="checkoutTitle"></h2>
       </div>
 
@@ -94,8 +94,8 @@
         <div class="field"><label for="fNome">Seu nome (obrigatório)</label><input id="fNome" type="text" autocomplete="name" maxlength="80" required></div>
         <div class="field"><label for="fTelefone">Telefone (opcional)</label><input id="fTelefone" type="tel" inputmode="tel" autocomplete="tel" maxlength="25"></div>
         <div class="segmented" role="radiogroup" aria-label="Como receber o pedido">
-          <button type="button" role="radio" aria-checked="true" id="segEntrega"  class="active" onclick="setDeliveryType('entrega')" data-label="delivOptionDeliv"></button>
-          <button type="button" role="radio" aria-checked="false" id="segRetirada"              onclick="setDeliveryType('retirada')" data-label="delivOptionPickup"></button>
+          <button type="button" role="radio" aria-checked="true" id="segEntrega" data-leading-icon="delivery" class="active" onclick="setDeliveryType('entrega')" data-label="delivOptionDeliv"></button>
+          <button type="button" role="radio" aria-checked="false" id="segRetirada" data-leading-icon="store" onclick="setDeliveryType('retirada')" data-label="delivOptionPickup"></button>
         </div>
 
         <div id="addressFields">
@@ -123,7 +123,7 @@
           </div>
         </div>
 
-        <div id="pickupNote" class="hero-strip" style="background:var(--cream);border-color:var(--line);color:var(--ink-soft);display:none;"></div>
+        <div id="pickupNote" data-leading-icon="store" class="hero-strip" style="background:var(--cream);border-color:var(--line);color:var(--ink-soft);display:none;"></div>
       </div>
 
       <!-- Passo 2: Pagamento -->
@@ -131,16 +131,16 @@
         <h3 id="checkoutPayTitle"></h3>
         <div role="radiogroup" aria-label="Forma de pagamento combinada com a loja">
         <button type="button" class="pay-option active" role="radio" aria-checked="true" data-pay="Pix"              onclick="setPayment('Pix')">
-          <span class="pemoji">💸</span><span class="pname">Pix</span><span class="pay-radio"></span>
+          <span class="pay-icon" data-icon="pix" aria-hidden="true"></span><span class="pname">Pix</span><span class="pay-radio"></span>
         </button>
         <button type="button" class="pay-option" role="radio" aria-checked="false" data-pay="Cartão de Crédito"       onclick="setPayment('Cartão de Crédito')">
-          <span class="pemoji">💳</span><span class="pname">Cartão de Crédito</span><span class="pay-radio"></span>
+          <span class="pay-icon" data-icon="card" aria-hidden="true"></span><span class="pname">Cartão de Crédito</span><span class="pay-radio"></span>
         </button>
         <button type="button" class="pay-option" role="radio" aria-checked="false" data-pay="Cartão de Débito"        onclick="setPayment('Cartão de Débito')">
-          <span class="pemoji">💳</span><span class="pname">Cartão de Débito</span><span class="pay-radio"></span>
+          <span class="pay-icon" data-icon="card" aria-hidden="true"></span><span class="pname">Cartão de Débito</span><span class="pay-radio"></span>
         </button>
         <button type="button" class="pay-option" role="radio" aria-checked="false" data-pay="Dinheiro"                onclick="setPayment('Dinheiro')">
-          <span class="pemoji">💵</span><span class="pname">Dinheiro</span><span class="pay-radio"></span>
+          <span class="pay-icon" data-icon="cash" aria-hidden="true"></span><span class="pname">Dinheiro</span><span class="pay-radio"></span>
         </button>
         </div>
         <div id="trocoField" class="field" style="display:none;">
@@ -172,7 +172,7 @@
       </div>
 
       <div class="step-actions">
-        <button type="button" class="back-link" id="btnBack" onclick="prevStep()" style="display:none;" data-label="btnBack"></button>
+        <button type="button" class="back-link" id="btnBack" data-leading-icon="arrow-left" onclick="prevStep()" style="display:none;" data-label="btnBack"></button>
         <button type="button" class="cta"       id="btnNext" onclick="nextStep()"></button>
       </div>
     </div>
@@ -180,7 +180,7 @@
     <!-- ================= TELA: CONFIRMAÇÃO ================= -->
     <div class="screen" id="screen-confirm">
       <div class="confirm-wrap">
-        <div class="stamp-big" id="confirmStamp"></div>
+        <div class="stamp-big" id="confirmStamp" data-leading-icon="receipt"></div>
         <h2 class="display" id="confirmTitle">Pedido pronto para enviar</h2>
         <p id="confirmSubtitle">Confira seu pedido antes de abrir o WhatsApp.</p>
         <div class="order-no" id="orderNo"></div>
@@ -190,9 +190,9 @@
       <p class="checkout-hint">Abrir o WhatsApp não confirma envio ou recebimento pela loja. Revise a mensagem e envie no aplicativo; aguarde a resposta da loja para combinar taxa e prazo.</p>
 
       <div class="confirm-actions">
-        <button type="button" class="cta" id="btnWhatsApp" onclick="sendWhatsApp()"></button>
-        <button type="button" class="cta ghost" id="btnCopyOrder" onclick="copyOrderMessage()">Copiar pedido</button>
-        <button type="button" class="cta ghost" id="btnEditOrder" onclick="editOrder()">Editar pedido</button>
+        <button type="button" class="cta" id="btnWhatsApp" data-leading-icon="phone-chat" onclick="sendWhatsApp()"></button>
+        <button type="button" class="cta ghost" id="btnCopyOrder" onclick="copyOrderMessage()"><span data-icon="copy" aria-hidden="true"></span> Copiar pedido</button>
+        <button type="button" class="cta ghost" id="btnEditOrder" onclick="editOrder()"><span data-icon="edit" aria-hidden="true"></span> Editar pedido</button>
         <button type="button" class="cta ghost" id="btnNewOrder" onclick="newOrder()"></button>
       </div>
     </div>
@@ -200,9 +200,9 @@
     <!-- Barra flutuante do carrinho -->
     <button type="button" class="cartbar hidden" id="cartbar" onclick="openCart()">
       <span class="badge" id="cbCount">0</span>
-      <span class="label" id="cartBarLabel"></span>
+      <span class="label" id="cartBarLabel" data-leading-icon="bag"></span>
       <span class="total mono" id="cbTotal">R$ 0,00</span>
-      <span class="chev" aria-hidden="true">›</span>
+      <span class="chev" data-icon="chevron-right" aria-hidden="true"></span>
     </button>
   </div><!-- /app -->
 </div><!-- /app-shell -->
@@ -210,7 +210,7 @@
 <!-- Modal de detalhes do produto -->
 <div class="modal-overlay" id="modalProduct" role="dialog" aria-modal="true" aria-labelledby="mName" tabindex="-1" aria-hidden="true">
   <div class="sheet" id="sheet">
-    <button type="button" class="modal-close" id="modalClose" onclick="closeProduct()" aria-label="Fechar detalhes do produto">×</button>
+    <button type="button" class="modal-close" id="modalClose" onclick="closeProduct()" aria-label="Fechar detalhes do produto"><span data-icon="close" aria-hidden="true"></span></button>
     <div class="sheet-handle" id="sheetHandle"></div>
     <div class="sheet-body">
       <div class="sheet-top">
@@ -249,9 +249,9 @@
 
       <div class="sheet-footer">
         <div class="stepper">
-          <button type="button" aria-label="Diminuir quantidade" onclick="modalQtyDelta(-1)">−</button>
+          <button type="button" aria-label="Diminuir quantidade" onclick="modalQtyDelta(-1)"><span data-icon="minus" aria-hidden="true"></span></button>
           <span class="qn" id="mQty">1</span>
-          <button type="button" aria-label="Aumentar quantidade" onclick="modalQtyDelta(1)">+</button>
+          <button type="button" aria-label="Aumentar quantidade" onclick="modalQtyDelta(1)"><span data-icon="plus" aria-hidden="true"></span></button>
         </div>
         <button type="button" class="cta" id="mAddBtn" onclick="addToCart()"></button>
       </div>
@@ -263,6 +263,7 @@
 
 <!-- Scripts (ordem importa) -->
 <script src="data/menu.js"></script>
+<script src="js/icons.js"></script>
 <script src="data/strings.js"></script>
 <script src="js/state.js"></script>
 <script src="js/utils.js"></script>
@@ -281,7 +282,7 @@
   document.getElementById('storeRating').textContent      = CONFIG.storeRating;
   document.getElementById('storeDeliveryTime').textContent= CONFIG.storeDeliveryTime;
   document.getElementById('storeAddress').textContent     = CONFIG.storeAddress;
-  document.getElementById('heroStrip').innerHTML          = STRINGS.heroStrip(CONFIG.freeDeliveryOver, CONFIG.minOrder);
+  document.getElementById('heroStrip').textContent          = STRINGS.heroStrip(CONFIG.freeDeliveryOver, CONFIG.minOrder);
   document.getElementById('ribbon').innerHTML             = STRINGS.couponBanner(CONFIG.couponCode, Math.round(CONFIG.couponDiscount * 100));
 
   // Busca

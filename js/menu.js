@@ -15,8 +15,8 @@ function matchesProduct(product, query) {
 function productCardHtml(product) {
   const promo = product.oldPrice ? `<span class="pold">${fmt(product.oldPrice)}</span><span class="promo-tag">OFERTA</span>` : '';
   return `<button type="button" class="product-card" data-product-id="${escapeHtml(product.id)}" aria-label="Personalizar ${escapeHtml(product.name)}, ${fmt(product.price)}">
-    <span class="pic" aria-hidden="true">${escapeHtml(product.icon)}</span><span class="pinfo"><span class="pname">${escapeHtml(product.name)}</span><span class="pdesc">${escapeHtml(product.desc)}</span>
-      <span class="prow"><span class="pprice">${fmt(product.price)}</span>${promo}<span class="addbtn" aria-hidden="true">+</span></span></span></button>`;
+    <span class="pic product-media" aria-hidden="true">${productImageHtml(product)}</span><span class="pinfo"><span class="pname">${escapeHtml(product.name)}</span><span class="pdesc">${escapeHtml(product.desc)}</span>
+      <span class="prow"><span class="pprice">${fmt(product.price)}</span>${promo}<span class="addbtn" aria-hidden="true">${iconHtml('plus')}</span></span></span></button>`;
 }
 
 function setActiveCategory(id) {
@@ -47,11 +47,11 @@ function revealCategory(button) {
 }
 
 function buildMenu() {
-  document.getElementById('catnav').innerHTML = CATEGORIES.map(category => `<button type="button" class="catpill" id="pill-${escapeHtml(category.id)}" data-category="${escapeHtml(category.id)}">${escapeHtml(category.icon)} ${escapeHtml(category.name)}</button>`).join('');
+  document.getElementById('catnav').innerHTML = CATEGORIES.map(category => `<button type="button" class="catpill" id="pill-${escapeHtml(category.id)}" data-category="${escapeHtml(category.id)}">${iconHtml(category.icon)} ${escapeHtml(category.name)}</button>`).join('');
   document.getElementById('sections').innerHTML = CATEGORIES.map(category => {
     const products = PRODUCTS.filter(product => product.cat === category.id);
     return `<section class="cat-section" id="cat-${escapeHtml(category.id)}" data-cat="${escapeHtml(category.id)}" aria-labelledby="heading-${escapeHtml(category.id)}">
-      <h2 class="cat-title" id="heading-${escapeHtml(category.id)}"><span>${escapeHtml(category.icon)} ${escapeHtml(category.name)}</span><span class="tag">${products.length} opções</span></h2>
+      <h2 class="cat-title" id="heading-${escapeHtml(category.id)}"><span>${iconHtml(category.icon)} ${escapeHtml(category.name)}</span><span class="tag">${products.length} opções</span></h2>
       <div class="product-grid">${products.map(productCardHtml).join('')}</div></section>`;
   }).join('');
   setActiveCategory(CATEGORIES[0].id);

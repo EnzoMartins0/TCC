@@ -1,9 +1,14 @@
 /* Bootstrap e eventos delegados. Mantém os templates livres de texto de usuário em JavaScript. */
+renderStaticIcons();
 restoreDraft();
 buildMenu();
 setDeliveryType(deliveryType);
 setPayment(paymentMethod);
+showCheckoutStep(checkoutStepN);
 renderCartBar();
+
+// Falhas de imagens não interrompem a escolha ou o pedido.
+document.addEventListener('error', handleProductImageError, true);
 
 // Produtos e categorias gerados dinamicamente.
 document.getElementById('sections').addEventListener('click', event => {

@@ -105,7 +105,9 @@ function initSheetDrag(sheet) {
 
 function renderModal() {
   const product = currentProduct;
-  document.getElementById('mPic').textContent = product.icon;
+  document.getElementById('mPic').classList.add('product-media');
+  document.getElementById('mPic').classList.remove('image-unavailable');
+  document.getElementById('mPic').innerHTML = productImageHtml(product, 'detail');
   document.getElementById('mName').textContent = product.name;
   document.getElementById('mDesc').textContent = product.desc;
   document.getElementById('mQty').textContent = modalQty;
@@ -117,7 +119,7 @@ function renderModal() {
     list.innerHTML = values.map(value => {
       const name = typeof value === 'string' ? value : value.name;
       return `<button type="button" class="opt-line" role="${group === 'flavor' ? 'radio' : 'checkbox'}" aria-checked="false" data-option="${group}" data-value="${escapeHtml(name)}">
-        <span class="ck ${group === 'flavor' ? 'round' : ''}" aria-hidden="true"></span>
+        <span class="ck ${group === 'flavor' ? 'round' : ''}" aria-hidden="true">${iconHtml('check')}</span>
         <span class="ol-name">${group === 'remove' ? STRINGS.modRemovePrefix : ''}${escapeHtml(name)}</span>
         ${group === 'extras' ? `<span class="ol-price">+ ${fmt(value.price)}</span>` : ''}</button>`;
     }).join('');
@@ -217,7 +219,6 @@ function addToCart() {
     uid:       uid(),
     productId: p.id,
     name:      p.name,
-    icon:      p.icon,
     qty:       modalQty,
     unit,
     flavor:    modalFlavor,

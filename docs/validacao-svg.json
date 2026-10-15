@@ -1,0 +1,802 @@
+{
+  "passed": true,
+  "scope": "Conversão dos ícones da interface para SVG; preservação das 19 ilustrações de produtos.",
+  "nodeTests": 48,
+  "browserChecks": 74,
+  "realMessageSent": false,
+  "mobileEmulated": true,
+  "notes": [
+    "Sessão de teste isolada; window.open interceptado.",
+    "Emulação não substitui avaliação em celular físico ou com leitores de tela."
+  ],
+  "browser": {
+    "interface": [
+      {
+        "passed": true,
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "results": [
+          {
+            "name": "SVGs estáticos locais, decorativos e controles com nomes",
+            "passed": true
+          },
+          {
+            "name": "busca e sacola vazias usam SVG",
+            "passed": true
+          },
+          {
+            "name": "modal e opções com checks vetoriais preservam interação",
+            "passed": true
+          },
+          {
+            "name": "checkout, pagamento e revisão mantêm SVG e texto seguro",
+            "passed": true
+          },
+          {
+            "name": "comanda permanece texto sem SVG e WhatsApp preserva mensagem",
+            "passed": true
+          }
+        ],
+        "realMessageSent": false
+      },
+      {
+        "passed": true,
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "results": [
+          {
+            "name": "SVGs estáticos locais, decorativos e controles com nomes",
+            "passed": true
+          },
+          {
+            "name": "busca e sacola vazias usam SVG",
+            "passed": true
+          },
+          {
+            "name": "modal e opções com checks vetoriais preservam interação",
+            "passed": true
+          },
+          {
+            "name": "checkout, pagamento e revisão mantêm SVG e texto seguro",
+            "passed": true
+          },
+          {
+            "name": "comanda permanece texto sem SVG e WhatsApp preserva mensagem",
+            "passed": true
+          }
+        ],
+        "realMessageSent": false
+      },
+      {
+        "passed": true,
+        "viewport": {
+          "width": 430,
+          "height": 932
+        },
+        "results": [
+          {
+            "name": "SVGs estáticos locais, decorativos e controles com nomes",
+            "passed": true
+          },
+          {
+            "name": "busca e sacola vazias usam SVG",
+            "passed": true
+          },
+          {
+            "name": "modal e opções com checks vetoriais preservam interação",
+            "passed": true
+          },
+          {
+            "name": "checkout, pagamento e revisão mantêm SVG e texto seguro",
+            "passed": true
+          },
+          {
+            "name": "comanda permanece texto sem SVG e WhatsApp preserva mensagem",
+            "passed": true
+          }
+        ],
+        "realMessageSent": false
+      },
+      {
+        "passed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "results": [
+          {
+            "name": "SVGs estáticos locais, decorativos e controles com nomes",
+            "passed": true
+          },
+          {
+            "name": "busca e sacola vazias usam SVG",
+            "passed": true
+          },
+          {
+            "name": "modal e opções com checks vetoriais preservam interação",
+            "passed": true
+          },
+          {
+            "name": "checkout, pagamento e revisão mantêm SVG e texto seguro",
+            "passed": true
+          },
+          {
+            "name": "comanda permanece texto sem SVG e WhatsApp preserva mensagem",
+            "passed": true
+          }
+        ],
+        "realMessageSent": false
+      }
+    ],
+    "regression": [
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "suite": "browser-flow.js",
+        "report": {
+          "passed": true,
+          "results": [
+            {
+              "name": "catálogo e busca sem acentos/sabores",
+              "passed": true
+            },
+            {
+              "name": "modal: Escape, foco, clique fora e seleção explícita",
+              "passed": true
+            },
+            {
+              "name": "retirada disponível abaixo do mínimo; troca para entrega é revalidada",
+              "passed": true
+            },
+            {
+              "name": "adicionais, remoções e observações como texto; quantidade e cupom sincronizados",
+              "passed": true
+            },
+            {
+              "name": "checkout completo valida troco e prepara rascunho identificado",
+              "passed": true
+            },
+            {
+              "name": "WhatsApp mantém texto exato e destino correto sem envio real",
+              "passed": true
+            },
+            {
+              "name": "editar preserva dados; novo pedido permite cancelar ou limpar tudo",
+              "passed": true
+            },
+            {
+              "name": "textos longos permitidos não alargam carrinho, revisão ou resumo",
+              "passed": true
+            },
+            {
+              "name": "sem erros JavaScript e sem rolagem horizontal",
+              "passed": true
+            }
+          ],
+          "realMessageSent": false
+        }
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "suite": "browser-category-scroll.js",
+        "report": {
+          "passed": true,
+          "width": 320,
+          "results": [
+            {
+              "action": "início",
+              "expected": "promo",
+              "active": "promo",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 0
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "lanches",
+              "active": "lanches",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 1381
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "porcoes",
+              "active": "porcoes",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 93,
+              "scrollY": 2318
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "bebidas",
+              "active": "bebidas",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 211,
+              "scrollY": 3033
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "sobremesas",
+              "active": "sobremesas",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 356,
+              "scrollY": 3733
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "bebidas",
+              "active": "bebidas",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 356,
+              "scrollY": 3033
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "porcoes",
+              "active": "porcoes",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 279,
+              "scrollY": 2318
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "lanches",
+              "active": "lanches",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 159,
+              "scrollY": 1381
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "promo",
+              "active": "promo",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 8,
+              "scrollY": 645
+            },
+            {
+              "action": "fim da página",
+              "expected": "sobremesas",
+              "active": "sobremesas",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 356,
+              "scrollY": 3916
+            },
+            {
+              "action": "retorno ao topo",
+              "expected": "promo",
+              "active": "promo",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 8,
+              "scrollY": 0
+            },
+            {
+              "action": "clique na categoria",
+              "expected": "bebidas",
+              "active": "bebidas",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 211,
+              "scrollY": 3025
+            },
+            {
+              "action": "rolagem manual após clique",
+              "expected": "porcoes",
+              "active": "porcoes",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 211,
+              "scrollY": 2318
+            }
+          ]
+        }
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "suite": "browser-product-images.js",
+        "report": {
+          "passed": true,
+          "viewport": {
+            "width": 320,
+            "height": 740
+          },
+          "images": [
+            {
+              "productId": "p1",
+              "src": "assets/products/p1.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p2",
+              "src": "assets/products/p2.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p3",
+              "src": "assets/products/p3.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p4",
+              "src": "assets/products/p4.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p5",
+              "src": "assets/products/p5.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p6",
+              "src": "assets/products/p6.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p7",
+              "src": "assets/products/p7.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p8",
+              "src": "assets/products/p8.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p9",
+              "src": "assets/products/p9.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p10",
+              "src": "assets/products/p10.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p11",
+              "src": "assets/products/p11.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p12",
+              "src": "assets/products/p12.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p13",
+              "src": "assets/products/p13.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p14",
+              "src": "assets/products/p14.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p15",
+              "src": "assets/products/p15.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p16",
+              "src": "assets/products/p16.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p17",
+              "src": "assets/products/p17.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p18",
+              "src": "assets/products/p18.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p19",
+              "src": "assets/products/p19.svg",
+              "width": 320,
+              "height": 320
+            }
+          ],
+          "results": [
+            {
+              "name": "todos os 19 produtos carregam imagens locais diferentes",
+              "passed": true
+            },
+            {
+              "name": "imagem do detalhe corresponde ao produto e tem descrição acessível",
+              "passed": true
+            },
+            {
+              "name": "falha de imagem não impede adicionar à sacola",
+              "passed": true
+            },
+            {
+              "name": "abrir outro produto elimina estado de imagem indisponível",
+              "passed": true
+            },
+            {
+              "name": "imagens não causam rolagem horizontal",
+              "passed": true
+            }
+          ],
+          "realMessageSent": false
+        }
+      },
+      {
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "suite": "browser-flow.js",
+        "report": {
+          "passed": true,
+          "results": [
+            {
+              "name": "catálogo e busca sem acentos/sabores",
+              "passed": true
+            },
+            {
+              "name": "modal: Escape, foco, clique fora e seleção explícita",
+              "passed": true
+            },
+            {
+              "name": "retirada disponível abaixo do mínimo; troca para entrega é revalidada",
+              "passed": true
+            },
+            {
+              "name": "adicionais, remoções e observações como texto; quantidade e cupom sincronizados",
+              "passed": true
+            },
+            {
+              "name": "checkout completo valida troco e prepara rascunho identificado",
+              "passed": true
+            },
+            {
+              "name": "WhatsApp mantém texto exato e destino correto sem envio real",
+              "passed": true
+            },
+            {
+              "name": "editar preserva dados; novo pedido permite cancelar ou limpar tudo",
+              "passed": true
+            },
+            {
+              "name": "textos longos permitidos não alargam carrinho, revisão ou resumo",
+              "passed": true
+            },
+            {
+              "name": "sem erros JavaScript e sem rolagem horizontal",
+              "passed": true
+            }
+          ],
+          "realMessageSent": false
+        }
+      },
+      {
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "suite": "browser-category-scroll.js",
+        "report": {
+          "passed": true,
+          "width": 1440,
+          "results": [
+            {
+              "action": "início",
+              "expected": "promo",
+              "active": "promo",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 0
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "lanches",
+              "active": "lanches",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 861
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "porcoes",
+              "active": "porcoes",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 1408
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "bebidas",
+              "active": "bebidas",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 1771
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "sobremesas",
+              "active": "sobremesas",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 1795
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "bebidas",
+              "active": "bebidas",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 1771
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "porcoes",
+              "active": "porcoes",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 1408
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "lanches",
+              "active": "lanches",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 861
+            },
+            {
+              "action": "rolagem vertical",
+              "expected": "promo",
+              "active": "promo",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 478
+            },
+            {
+              "action": "fim da página",
+              "expected": "sobremesas",
+              "active": "sobremesas",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 1795
+            },
+            {
+              "action": "retorno ao topo",
+              "expected": "promo",
+              "active": "promo",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 0
+            },
+            {
+              "action": "clique na categoria",
+              "expected": "bebidas",
+              "active": "bebidas",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 1763
+            },
+            {
+              "action": "rolagem manual após clique",
+              "expected": "porcoes",
+              "active": "porcoes",
+              "passed": true,
+              "fullyVisible": true,
+              "navScrollLeft": 0,
+              "scrollY": 1408
+            }
+          ]
+        }
+      },
+      {
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "suite": "browser-product-images.js",
+        "report": {
+          "passed": true,
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "images": [
+            {
+              "productId": "p1",
+              "src": "assets/products/p1.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p2",
+              "src": "assets/products/p2.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p3",
+              "src": "assets/products/p3.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p4",
+              "src": "assets/products/p4.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p5",
+              "src": "assets/products/p5.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p6",
+              "src": "assets/products/p6.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p7",
+              "src": "assets/products/p7.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p8",
+              "src": "assets/products/p8.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p9",
+              "src": "assets/products/p9.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p10",
+              "src": "assets/products/p10.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p11",
+              "src": "assets/products/p11.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p12",
+              "src": "assets/products/p12.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p13",
+              "src": "assets/products/p13.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p14",
+              "src": "assets/products/p14.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p15",
+              "src": "assets/products/p15.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p16",
+              "src": "assets/products/p16.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p17",
+              "src": "assets/products/p17.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p18",
+              "src": "assets/products/p18.svg",
+              "width": 320,
+              "height": 320
+            },
+            {
+              "productId": "p19",
+              "src": "assets/products/p19.svg",
+              "width": 320,
+              "height": 320
+            }
+          ],
+          "results": [
+            {
+              "name": "todos os 19 produtos carregam imagens locais diferentes",
+              "passed": true
+            },
+            {
+              "name": "imagem do detalhe corresponde ao produto e tem descrição acessível",
+              "passed": true
+            },
+            {
+              "name": "falha de imagem não impede adicionar à sacola",
+              "passed": true
+            },
+            {
+              "name": "abrir outro produto elimina estado de imagem indisponível",
+              "passed": true
+            },
+            {
+              "name": "imagens não causam rolagem horizontal",
+              "passed": true
+            }
+          ],
+          "realMessageSent": false
+        }
+      }
+    ]
+  }
+}

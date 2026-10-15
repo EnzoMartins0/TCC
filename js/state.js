@@ -67,7 +67,7 @@ function restoreDraftLine(raw) {
   if (!product || (product.flavors && !product.flavors.includes(raw.flavor))) return null;
   const extras = (product.extras || []).filter(extra => Array.isArray(raw.extras) && raw.extras.includes(extra.name));
   const removed = (product.remove || []).filter(name => Array.isArray(raw.removed) && raw.removed.includes(name));
-  return { uid: uid(), productId: product.id, name: product.name, icon: product.icon,
+  return { uid: uid(), productId: product.id, name: product.name,
     qty: raw.qty, unit: unitPriceFor(product, new Set(extras.map(extra => extra.name))),
     flavor: product.flavors ? raw.flavor : null, extras: extras.map(extra => ({ ...extra })), removed, obs: '' };
 }

@@ -151,7 +151,7 @@ function showCheckoutStep(step) {
   checkoutStepN = step;
   [1, 2, 3].forEach(n => { document.getElementById('step' + n).style.display = n === step ? 'block' : 'none'; });
   document.getElementById('btnBack').style.display = step > 1 ? 'block' : 'none';
-  document.getElementById('btnNext').textContent = step === 3 ? STRINGS.checkoutBtnFinish : STRINGS.checkoutBtnNext;
+  setIconText(document.getElementById('btnNext'), step === 3 ? 'receipt' : 'chevron-right', step === 3 ? STRINGS.checkoutBtnFinish : STRINGS.checkoutBtnNext);
   renderCheckoutStepper();
 }
 
@@ -190,14 +190,14 @@ function renderReview() {
   } else {
     addr = STRINGS.reviewPickup;
   }
-  document.getElementById('reviewDelivery').textContent = addr;
+  setIconText(document.getElementById('reviewDelivery'), deliveryType === 'entrega' ? 'delivery' : 'store', addr);
 
   let pay = STRINGS.reviewPayPrefix + paymentMethod;
   if (paymentMethod === 'Dinheiro') {
     const troco = document.getElementById('fTroco').value.trim();
     pay += troco ? STRINGS.reviewChangeFor(troco) : STRINGS.reviewNoChange;
   }
-  document.getElementById('reviewPayment').textContent = pay;
+  setIconText(document.getElementById('reviewPayment'), paymentMethod === 'Dinheiro' ? 'cash' : paymentMethod === 'Pix' ? 'pix' : 'card', pay);
 
   const t = calcTotals();
   document.getElementById('reviewTotals').innerHTML = `

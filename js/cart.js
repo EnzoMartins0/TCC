@@ -39,25 +39,25 @@ function renderCart() {
   const el = document.getElementById('cartContent');
   const errorBox = '<div id="cartError" class="inline-error hidden" role="alert"></div>';
   if (!cart.length) {
-    el.innerHTML = `${errorBox}<div class="empty-cart"><div class="big" aria-hidden="true">${STRINGS.cartEmpty}</div><h3>Sua sacola está vazia</h3><p>Escolha seu lanche e monte um pedido do seu jeito.</p><button type="button" class="cta cart-empty-action" onclick="showScreen('menu')">Explorar o cardápio</button></div>`;
+    el.innerHTML = `${errorBox}<div class="empty-cart"><div class="big" aria-hidden="true">${iconHtml('bag')}</div><h3>Sua sacola está vazia</h3><p>Escolha seu lanche e monte um pedido do seu jeito.</p><button type="button" class="cta cart-empty-action" onclick="showScreen('menu')">Explorar o cardápio</button></div>`;
     return;
   }
   const totals = calcTotals();
   const minBlocked = deliveryType === 'entrega' && Math.round((totals.subtotal - totals.discount) * 100) < Math.round(CONFIG.minOrder * 100);
   const rows = cart.map(line => `<div class="ticket-row">
-    <div class="row-info"><div class="row-name">${escapeHtml(line.icon)} ${escapeHtml(line.name)}</div>
+    <div class="row-info"><div class="row-name"><span class="cart-product-image product-media" aria-hidden="true">${productImageHtml(line, 'cart')}</span><span>${escapeHtml(line.name)}</span></div>
       <div class="row-mods">${escapeHtml(lineModsText(line))}</div>
       <div class="stepper" aria-label="Quantidade de ${escapeHtml(line.name)}">
-        <button type="button" data-cart-action="decrease" data-uid="${escapeHtml(line.uid)}" aria-label="Diminuir quantidade de ${escapeHtml(line.name)}">−</button>
+        <button type="button" data-cart-action="decrease" data-uid="${escapeHtml(line.uid)}" aria-label="Diminuir quantidade de ${escapeHtml(line.name)}">${iconHtml('minus')}</button>
         <span class="qn" aria-live="polite">${line.qty}</span>
-        <button type="button" data-cart-action="increase" data-uid="${escapeHtml(line.uid)}" ${line.qty >= 20 ? 'disabled' : ''} aria-label="Aumentar quantidade de ${escapeHtml(line.name)}">+</button>
+        <button type="button" data-cart-action="increase" data-uid="${escapeHtml(line.uid)}" ${line.qty >= 20 ? 'disabled' : ''} aria-label="Aumentar quantidade de ${escapeHtml(line.name)}">${iconHtml('plus')}</button>
       </div>
     </div>
-    <div class="row-right"><div class="row-price mono">${fmt(line.unit * line.qty)}</div><button type="button" class="row-trash" data-cart-action="remove" data-uid="${escapeHtml(line.uid)}" aria-label="Remover ${escapeHtml(line.name)}">Remover</button></div></div>`).join('');
+    <div class="row-right"><div class="row-price mono">${fmt(line.unit * line.qty)}</div><button type="button" class="row-trash" data-cart-action="remove" data-uid="${escapeHtml(line.uid)}" aria-label="Remover ${escapeHtml(line.name)}">${iconHtml('trash')}<span>Remover</span></button></div></div>`).join('');
   el.innerHTML = `${errorBox}<div class="delivery-selector"><h3>Como você quer receber?</h3>
     <div class="segmented" role="radiogroup" aria-label="Tipo de recebimento">
-      <button type="button" role="radio" aria-checked="${deliveryType === 'entrega'}" class="${deliveryType === 'entrega' ? 'active' : ''}" onclick="setDeliveryType('entrega')">🛵 Entrega</button>
-      <button type="button" role="radio" aria-checked="${deliveryType === 'retirada'}" class="${deliveryType === 'retirada' ? 'active' : ''}" onclick="setDeliveryType('retirada')">🏪 Retirada</button>
+      <button type="button" role="radio" aria-checked="${deliveryType === 'entrega'}" class="${deliveryType === 'entrega' ? 'active' : ''}" onclick="setDeliveryType('entrega')">${iconHtml('delivery')}<span>Entrega</span></button>
+      <button type="button" role="radio" aria-checked="${deliveryType === 'retirada'}" class="${deliveryType === 'retirada' ? 'active' : ''}" onclick="setDeliveryType('retirada')">${iconHtml('store')}<span>Retirada</span></button>
     </div><p class="cart-delivery-note">${deliveryType === 'retirada' ? 'Retirada sem taxa e sem pedido mínimo. Combine o horário com a loja.' : `Mínimo de ${fmt(CONFIG.minOrder)} e frete grátis a partir de ${fmt(CONFIG.freeDeliveryOver)}, após descontos.`}</p></div>
     <div class="ticket"><div class="ticket-body">${rows}
       <label for="couponInput" class="helper-text">Tem um cupom?</label>

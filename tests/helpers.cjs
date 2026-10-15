@@ -22,6 +22,7 @@ function createApp(stored = {}) {
         focus: () => { document.activeElement = node; }, addEventListener() {},
         querySelectorAll: () => [], querySelector: () => null,
         scrollIntoView() {}, scrollTo() {}, appendChild() {}, remove() {},
+        insertAdjacentHTML(position, html) { if(position!=='afterbegin') throw new Error('Posição não suportada pelo adaptador'); node.innerHTML = html + node.innerHTML; },
         getBoundingClientRect: () => ({ top: 0, height: 100 }),
       };
       elements.set(id, node);
@@ -50,7 +51,7 @@ function createApp(stored = {}) {
   });
   context.window = context;
   context.open = (...args) => { context.opened = args; return {}; };
-  const files = ['data/menu.js','data/strings.js','js/state.js','js/utils.js','js/screens.js','js/menu.js','js/modal.js','js/cart.js','js/checkout.js'];
+  const files = ['js/icons.js','data/menu.js','data/strings.js','js/state.js','js/utils.js','js/screens.js','js/menu.js','js/modal.js','js/cart.js','js/checkout.js'];
   for (const file of files) vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context,{filename:file});
   const run = source => vm.runInContext(source, context);
   function validOrder(productId = 'p1') {

@@ -27,8 +27,9 @@ test('observações e modificações são exibidas como texto no carrinho e revi
   const app=createApp();app.validOrder();
   app.run(`cart[0].obs='<img src=x onerror=alert(1)>';cart[0].extras=[{name:'Bacon extra',price:5}];cart[0].removed=['Cebola'];renderCart();renderReview()`);
   for (const id of ['cartContent','reviewItems']) {
-    assert.doesNotMatch(app.element(id).innerHTML,/<img/i,id);
-    assert.match(app.element(id).innerHTML,/&lt;img/,id);
+    // Imagens oficiais do catálogo são válidas; a observação não pode criar uma tag executável.
+    assert.doesNotMatch(app.element(id).innerHTML,/<img\b[^>]*\bonerror\s*=/i,id);
+    assert.match(app.element(id).innerHTML,/&lt;img src=x onerror=alert\(1\)&gt;/,id);
     assert.match(app.element(id).innerHTML,/Bacon extra/,id);
     assert.match(app.element(id).innerHTML,/Cebola/,id);
   }

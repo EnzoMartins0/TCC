@@ -83,6 +83,7 @@
   align-items: center;
   justify-content: center;
 }
+.stepper .ui-icon, .stamp .ui-icon { width:18px; height:18px; }
 .stepper .qn {
   font-family: 'JetBrains Mono';
   font-size: 12px;
@@ -92,11 +93,13 @@
 }
 
 .row-info  { flex: 1; min-width: 0; }
-.row-name  { font-size: 13.5px; font-weight: 600; }
+.row-name { display:flex; align-items:center; gap:10px; font-size:13.5px; font-weight:600; }
+.cart-product-image { display:block; width:44px; height:44px; border-radius:9px; background:var(--paper); flex-shrink:0; }
+.cart-product-image .product-image-fallback { font-size:8px; padding:3px; }
 .row-mods  { font-size: 11px; color: var(--ink-soft); margin-top: 2px; line-height: 1.4; overflow-wrap: anywhere; }
 .row-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
 .row-price { font-family: 'JetBrains Mono'; font-weight: 700; font-size: 13px; }
-.row-trash { border: none; background: none; color: var(--ink-soft); font-size: 13px; cursor: pointer; }
+.row-trash { display:grid; place-items:center; border: none; background: none; color: var(--ink-soft); font-size: 13px; cursor: pointer; }
 
 /* ---------- Cupom ---------- */
 .coupon-row { display: flex; gap: 8px; margin-top: 14px; }
@@ -156,6 +159,8 @@
 /* ---------- Botões CTA ---------- */
 .cta {
   display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
   width: calc(100% - 32px);
   margin: 6px 16px 16px;
   background: var(--ember);
@@ -180,6 +185,7 @@
 /* ---------- Carrinho vazio ---------- */
 .empty-cart { padding: 60px 30px; text-align: center; color: var(--ink-soft); font-size: 13px; }
 .empty-cart .big { font-size: 40px; margin-bottom: 10px; }
+.empty-cart .big .ui-icon { width:40px; height:40px; }
 
 /* ---------- Checkout — stepper de passos ---------- */
 .stepper-nav {
@@ -221,6 +227,8 @@
 }
 .segmented button {
   flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
   text-align: center;
   padding: 11px 6px;
   font-size: 13px;
@@ -251,8 +259,9 @@
   cursor: pointer;
 }
 .pay-option.active  { border-color: var(--ember); background: #fdf0e7; }
-.pay-option .pemoji { font-size: 19px; }
-.pay-option .pname  { font-size: 13.5px; font-weight: 600; flex: 1; }
+.pay-option .pay-icon { display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--ember-dark); }
+.pay-option .pay-icon .ui-icon { width:22px; height:22px; }
+.pay-option .pname  { min-width:0; overflow-wrap:anywhere; font-size: 13.5px; font-weight: 600; flex: 1; }
 .pay-radio          { width: 17px; height: 17px; border-radius: 50%; border: 2px solid var(--ink-soft); flex-shrink: 0; }
 .pay-option.active .pay-radio { border-color: var(--ember); background: radial-gradient(circle, var(--ember) 0 45%, transparent 46%); }
 
